@@ -18,7 +18,7 @@ export const stationController = {
             windspeed: Number(request.body.windspeed),
             pressure: Number(request.body.pressure),
           };
-          await readingStore.addReading(station._id, newReading);
+          await stationStore.addReading(station._id, newReading);
           response.redirect("/station/" + station._id);
         },
       };

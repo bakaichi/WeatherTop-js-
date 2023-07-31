@@ -11,7 +11,7 @@ export const stationStore = {
 
   async addStation(station) {
     await db.read();
-    station.id = v4();
+    station._id = v4();
     station.readings = []; // Initialize readings as an empty array
     db.data.stations.push(station);
     await db.write();
@@ -20,7 +20,7 @@ export const stationStore = {
 
   async getStationById(id) {
     await db.read();
-    const station = db.data.stations.find((station) => station.id === id);
+    const station = db.data.stations.find((station) => station._id === id);
 
     if (!station) {
       return null; // Return null or throw an error depending on your use case
@@ -31,7 +31,7 @@ export const stationStore = {
 
   async deleteStationById(id) {
     await db.read();
-    const index = db.data.stations.findIndex((station) => station.id === id);
+    const index = db.data.stations.findIndex((station) => station._id === id);
     db.data.stations.splice(index, 1);
     await db.write();
   },
@@ -44,7 +44,7 @@ export const stationStore = {
   async addReading(stationId, reading) {
     await db.read();
     reading.id = v4();
-    const station = db.data.stations.find((station) => station.id === stationId);
+    const station = db.data.stations.find((station) => station._id === stationId);
 
     if (!station) {
       throw new Error("Station not found"); // or handle it in any other way

@@ -1,7 +1,7 @@
 {
-    "name": "playlist",
+    "name": "WeatherTop",
     "version": "0.1.0",
-    "description": "Simple Playlist Maker",
+    "description": "Your favorite weather app when bored on a rainy day",
     "main": "server.js",
     "type": "module",
     "scripts": {

@@ -2,9 +2,51 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "name": "Dublin",
-      "id": "01",
-      "readings": []
+      "name": "Tramore",
+      "_id": "01",
+      "readings": [
+        {
+          "code": 800,
+          "temp": 0.5,
+          "windspeed": 3.5,
+          "pressure": 1002,
+          "id": "02"
+        },
+        {
+          "code": 600,
+          "temp": 6,
+          "windspeed": 2,
+          "pressure": 1004,
+          "id": "03"
+        },
+        {
+          "code": 700,
+          "temp": 8,
+          "windspeed": 1,
+          "pressure": 1005,
+          "id": "04"
+        }
+      ]
+    },
+    {
+      "name": "Dunmore",
+      "_id": "05",
+      "readings": [
+        {
+          "code": 700,
+          "temp": 8,
+          "windspeed": 1,
+          "pressure": 999,
+          "id": "06"
+        },
+        {
+          "code": 200,
+          "temp": 0.5,
+          "windspeed": 3.5,
+          "pressure": 1000,
+          "id": "07"
+        }
+      ]
     }
   ]
 }
