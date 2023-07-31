@@ -1,0 +1,10 @@
+{
+  "file": "./models/stations.json",
+  "stations": [
+    {
+      "name": "Dublin",
+      "id": "01",
+      "readings": []
+    }
+  ]
+}
