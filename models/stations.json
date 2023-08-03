@@ -47,6 +47,33 @@
           "id": "07"
         }
       ]
+    },
+    {
+      "name": "Cork",
+      "_id": "6d096039-16f5-47c1-828c-2f9321fbf21a",
+      "readings": [
+        {
+          "code": 1000,
+          "temp": 15,
+          "windspeed": 4.5,
+          "pressure": 900,
+          "id": "8635252e-e2c4-4378-a109-49158b86e6e1"
+        },
+        {
+          "code": 300,
+          "temp": 24,
+          "windspeed": 3.5,
+          "pressure": 1002,
+          "id": "78aa4af6-5b66-4a2e-9309-f62127341e79"
+        },
+        {
+          "code": 800,
+          "temp": 15,
+          "windspeed": 4.5,
+          "pressure": 1002,
+          "id": "42ce9388-92cc-4052-bd4f-078a1404caca"
+        }
+      ]
     }
   ]
 }
