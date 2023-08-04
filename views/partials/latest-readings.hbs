@@ -3,7 +3,7 @@
         <tr>
             <th>Code</th>
             <th>Temp</th>
-            <th>Wind Speed</th>
+            <th>Wind</th>
             <th>Pressure</th>
         </tr>
     </thead>
@@ -16,10 +16,12 @@
 
             <td>
                 {{lastReading.temp}}°C <br>
-                {{celciusToFahrenheit}}°F
+                {{toFahrenheit}}°F
             </td>
             <td>
-                {{convertToBeufort}} bFt
+                {{toBeufort}} bFt <br>
+                {{direction}} <br>
+                Feels like {{windChill}}°C
             </td>
             <td>
                 {{lastReading.pressure}} hPa

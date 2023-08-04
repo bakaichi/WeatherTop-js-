@@ -10,6 +10,7 @@
           "temp": 0.5,
           "windspeed": 3.5,
           "pressure": 1002,
+          "windDirection": 90,
           "id": "02"
         },
         {
@@ -17,6 +18,7 @@
           "temp": 6,
           "windspeed": 2,
           "pressure": 1004,
+          "windDirection": 96,
           "id": "03"
         },
         {
@@ -24,6 +26,7 @@
           "temp": 8,
           "windspeed": 1,
           "pressure": 1005,
+          "windDirection": 101,
           "id": "04"
         }
       ]
@@ -37,6 +40,7 @@
           "temp": 8,
           "windspeed": 1,
           "pressure": 999,
+          "windDirection": 98,
           "id": "06"
         },
         {
@@ -44,7 +48,22 @@
           "temp": 0.5,
           "windspeed": 3.5,
           "pressure": 1000,
+          "windDirection": 102,
           "id": "07"
+        }
+      ]
+    },
+    {
+      "name": "Dublin",
+      "_id": "8cbdb6cc-bc47-4cdc-9001-ac3a3900e7b4",
+      "readings": [
+        {
+          "code": 800,
+          "temp": 15,
+          "windspeed": 4.5,
+          "pressure": 1002,
+          "windDirection": 244,
+          "id": "d1790df5-81b9-4cb9-812e-bd1a92a372f3"
         }
       ]
     }

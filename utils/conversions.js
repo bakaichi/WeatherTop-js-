@@ -74,7 +74,52 @@ export const conversions = {
         } else if (windspeed >= 1){
             return 1;
         } else {
-            return 0;
+            return 'No Weather Data Available';
         }
     },
+
+    convertWindDirection(windDirection){
+        if (windDirection >= 326.25){
+            return 'North North West';
+        } else if (windDirection >= 303.75){
+            return 'North West';
+        } else if (windDirection >= 281.25){
+            return 'West North West';
+        } else if (windDirection >= 258.75){
+            return 'West';
+        } else if (windDirection >= 236.25){
+            return 'West South West';
+        } else if (windDirection >= 213.75){
+            return 'South West';
+        } else if (windDirection >= 191.25){
+            return 'South South West';
+        } else if (windDirection >= 168.75){
+            return 'South';
+        } else if (windDirection >= 146.25){
+            return 'South South East';
+        } else if (windDirection >= 123.75){
+            return 'South East';
+        } else if (windDirection >= 101.26){
+            return 'East South East';
+        } else if (windDirection >= 78.75){
+            return 'East';
+        } else if (windDirection >= 56.25){
+            return 'East North East';
+        } else if (windDirection >= 33.75){
+            return 'North East';
+        } else if (windDirection >= 11.25){
+            return 11.25;
+        } else {
+            return 'North';
+        }
+    },
+
+     windChill(windspeed, temp) {
+        let windChill = 13.12 + 0.6215 * temp - 11.37 * Math.pow(windspeed, 0.16) + 0.3965
+                        * temp * Math.pow(windspeed, 0.16);
+
+        windChill = Math.round(windChill * 10) / 10.0; // rounds the answer to 1 decimal point
+        return windChill;
+    },
+    
 };

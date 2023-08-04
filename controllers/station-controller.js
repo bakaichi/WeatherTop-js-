@@ -5,16 +5,20 @@ export const stationController = {
         async index(request, response) {
           const station = await stationStore.getStationById(request.params.id);
           const lastReading = conversions.getLatestReading(station);
-          const celciusToFahrenheit = conversions.celciusToFahrenheit(lastReading.temp);
+          const toFahrenheit = conversions.celciusToFahrenheit(lastReading.temp);
           const codeToWeather = conversions.codeToWeather(lastReading.code);
-          const convertToBeufort = conversions.convertToBeufort(lastReading.windspeed);
+          const toBeufort = conversions.convertToBeufort(lastReading.windspeed);
+          const direction = conversions.convertWindDirection(lastReading.windDirection); 
+          const windChill = conversions.windChill(lastReading.windspeed, lastReading.temp);
           const viewData = {
             title: "Station",
             station: station,
             lastReading: lastReading,
-            celciusToFahrenheit: celciusToFahrenheit,
+            toFahrenheit: toFahrenheit,
             codeToWeather: codeToWeather,
-            convertToBeufort: convertToBeufort,
+            toBeufort: toBeufort,
+            direction: direction,
+            windChill: windChill,
           };
           response.render("station-view", viewData);
         },
@@ -26,6 +30,7 @@ export const stationController = {
             temp: Number(request.body.temp),
             windspeed: Number(request.body.windspeed),
             pressure: Number(request.body.pressure),
+            windDirection: Number(request.body.windDirection),
           };
           await stationStore.addReading(station._id, newReading);
           response.redirect("/station/" + station._id);
