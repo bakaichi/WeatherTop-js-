@@ -11,17 +11,18 @@
        
         <tr>
             <td>
-                {{lastReading.code}}
+                {{codeToWeather}}
             </td>
 
             <td>
-                {{lastReading.temp}}
+                {{lastReading.temp}}°C <br>
+                {{celciusToFahrenheit}}°F
             </td>
             <td>
-                {{lastReading.windspeed}}
+                {{convertToBeufort}} bFt
             </td>
             <td>
-                {{lastReading.pressure}}
+                {{lastReading.pressure}} hPa
             </td>
         </tr>
 

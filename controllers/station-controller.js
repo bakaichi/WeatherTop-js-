@@ -5,10 +5,16 @@ export const stationController = {
         async index(request, response) {
           const station = await stationStore.getStationById(request.params.id);
           const lastReading = conversions.getLatestReading(station);
+          const celciusToFahrenheit = conversions.celciusToFahrenheit(lastReading.temp);
+          const codeToWeather = conversions.codeToWeather(lastReading.code);
+          const convertToBeufort = conversions.convertToBeufort(lastReading.windspeed);
           const viewData = {
             title: "Station",
             station: station,
             lastReading: lastReading,
+            celciusToFahrenheit: celciusToFahrenheit,
+            codeToWeather: codeToWeather,
+            convertToBeufort: convertToBeufort,
           };
           response.render("station-view", viewData);
         },
