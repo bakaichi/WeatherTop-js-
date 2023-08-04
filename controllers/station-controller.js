@@ -1,11 +1,14 @@
 import {stationStore} from "../models/station-store.js";
+import { conversions } from "../utils/conversions.js";
 
 export const stationController = {
         async index(request, response) {
           const station = await stationStore.getStationById(request.params.id);
+          const lastReading = conversions.getLatestReading(station);
           const viewData = {
             title: "Station",
             station: station,
+            lastReading: lastReading,
           };
           response.render("station-view", viewData);
         },

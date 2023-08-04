@@ -1,10 +1,20 @@
 {{> menu}}
 
 <section class="section">
-    <div class="title">
-        {{station.name}}
+    <div class="columns">
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                        <div class="title">
+                             {{station.name}}
+                        </div>
+                        {{> latest-readings}}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    {{> latest-readings}}
     {{> list-readings}}
     {{> add-readings}}
 </section>
