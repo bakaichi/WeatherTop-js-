@@ -66,6 +66,21 @@
           "id": "d1790df5-81b9-4cb9-812e-bd1a92a372f3"
         }
       ]
+    },
+    {
+      "name": "Cork",
+      "userid": "63b521ca-703e-4940-911a-3bd44f6cd057",
+      "_id": "e1022625-8d18-4bda-be58-a264a3526ed7",
+      "readings": [
+        {
+          "code": 300,
+          "temp": 10.2,
+          "windspeed": 15,
+          "pressure": 2000,
+          "windDirection": 24,
+          "id": "29f8f073-84d0-481e-b8ba-e79c2b3f7553"
+        }
+      ]
     }
   ]
 }

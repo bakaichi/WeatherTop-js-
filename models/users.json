@@ -1,0 +1,19 @@
+{
+  "file": "./models/users.json",
+  "users": [
+    {
+      "firstName": "Aidas",
+      "lastName": "Vaiciunas",
+      "email": "aidas@weathertop.com",
+      "password": "hello",
+      "_id": "63b521ca-703e-4940-911a-3bd44f6cd057"
+    },
+    {
+      "firstName": "Aidas",
+      "lastName": "Vaiciunas",
+      "email": "playmyguitar1998@gmail.com",
+      "password": "hello",
+      "_id": "6258b0b5-69f1-4e1b-a08f-1bf56a80e9e1"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ export const conversions = {
     getLatestReading(station) {
         let lastReading = null;
 
-        if (station.readings.length > 0){
+        if (station.readings.length > 0) {
             lastReading = station.readings[0];
             for (let i = 0; i < station.readings.length; i++){
                 lastReading = station.readings[i];
@@ -50,7 +50,7 @@ export const conversions = {
         return s;
     },
 
-    convertToBeufort(windspeed){
+    convertToBeufort(windspeed) {
         if (windspeed >= 103) {
             return 11;
         } else if (windspeed >= 89){
@@ -78,7 +78,7 @@ export const conversions = {
         }
     },
 
-    convertWindDirection(windDirection){
+    convertWindDirection(windDirection) {
         if (windDirection >= 326.25){
             return 'North North West';
         } else if (windDirection >= 303.75){
