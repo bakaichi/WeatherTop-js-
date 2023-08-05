@@ -13,6 +13,40 @@ export const conversions = {
         return lastReading;
     },
 
+    getMaxValue(station, property) {
+        if (station.readings.length < 2) {
+          return 'not enough data';
+        }
+    
+        let maxVal = station.readings[0][property];
+
+        for (let i = 1; i < station.readings.length; i++) {
+          const value = station.readings[i][property];
+          if (value > maxVal) {
+            maxVal = value;
+          }
+        }
+    
+        return maxVal; 
+    },
+
+    getMinValue(station, property) {
+        if (station.readings.length < 2) {
+          return 'not enough data';
+        } else {
+            
+          let minVal = station.readings[0][property];
+    
+          for (let i = 1; i < station.readings.length; i++) {
+            const value = station.readings[i][property];
+            if (value < minVal) {
+              minVal = value;
+            }
+          }    
+          return minVal; 
+        }
+      },
+     
     celciusToFahrenheit(temp) {
         return (temp * 1.8) + 32;
     },
@@ -120,6 +154,6 @@ export const conversions = {
 
         windChill = Math.round(windChill * 10) / 10.0; // rounds the answer to 1 decimal point
         return windChill;
-    },
-    
+    },  
+      
 };

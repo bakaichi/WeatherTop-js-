@@ -3,6 +3,7 @@ import { conversions } from "../utils/conversions.js";
 
 export const stationController = {
         async index(request, response) {
+          
           const station = await stationStore.getStationById(request.params.id);
           const lastReading = conversions.getLatestReading(station);
           const toFahrenheit = conversions.celciusToFahrenheit(lastReading.temp);
@@ -10,6 +11,18 @@ export const stationController = {
           const toBeufort = conversions.convertToBeufort(lastReading.windspeed);
           const direction = conversions.convertWindDirection(lastReading.windDirection); 
           const windChill = conversions.windChill(lastReading.windspeed, lastReading.temp);
+
+          const maxTemp = conversions.getMaxValue(station, 'temp');
+          const maxWind = conversions.getMaxValue(station, 'windspeed');
+          const maxWindBft = conversions.convertToBeufort(maxWind);
+          const maxPressure = conversions.getMaxValue(station, 'pressure');
+
+          const minTemp = conversions.getMinValue(station, 'temp');
+          const minWind = conversions.getMinValue(station, 'windspeed');
+          const minWindBft = conversions.convertToBeufort(minWind);
+          const minPressure = conversions.getMinValue(station, 'pressure');
+
+
           const viewData = {
             title: "Station",
             station: station,
@@ -19,6 +32,16 @@ export const stationController = {
             toBeufort: toBeufort,
             direction: direction,
             windChill: windChill,
+
+            maxTemp: maxTemp,
+            maxWind: maxWind,
+            maxWindBft: maxWindBft,
+            maxPressure: maxPressure,
+
+            minTemp: minTemp,
+            minWind: minWind,
+            minWindBft: minWindBft,
+            minPressure: minPressure,
           };
           response.render("station-view", viewData);
         },
@@ -35,5 +58,6 @@ export const stationController = {
           await stationStore.addReading(station._id, newReading);
           response.redirect("/station/" + station._id);
         },
-      };
+
+};
       

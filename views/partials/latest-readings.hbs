@@ -16,15 +16,28 @@
 
             <td>
                 {{lastReading.temp}}°C <br>
-                {{toFahrenheit}}°F
+                {{toFahrenheit}}°F <br><br><br>
+                Max Temp<br>
+                 {{maxTemp}}°C <br>
+                 Min <br>
+                 {{minTemp}}
+                
             </td>
             <td>
                 {{toBeufort}} bFt <br>
                 {{direction}} <br>
-                Feels like {{windChill}}°C
+                Feels like {{windChill}}°C <br><br>
+                Max Wind <br>
+                {{maxWindBft}} bFt <br>
+                Min <br>
+                {{minWindBft}}
             </td>
             <td>
-                {{lastReading.pressure}} hPa
+                {{lastReading.pressure}} hPa <br><br><br><br>
+                Max Pressure <br>
+                {{maxPressure}} <br>
+                Min <br>
+                {{minPressure}}
             </td>
         </tr>
 
