@@ -1,22 +1,74 @@
 {{#each stations}}
-</section>
+<section> <br> <br>
     <div class="columns">
-        <div class="column">
+        <div class="column is-one-fifth">
             <div class="card">
                 <div class="card-content">
                     <div class="content has-text-centered">
-                            {{name}} <br> <br>
-                            Code: {{lastReading.code}}
-                            Temperature: {{lastReading.temp}}
-                            Wind Speed: {{lastReading.windspeed}}
-                            Pressure: {{lastReading.pressure}}
-                            Wind Direction: {{lastReading.windDirection}}
-                            
-                        <a href="/station/{{_id}}" class="button">{{>icons/open}}</a>
-                        <a href="/dashboard/deletestation/{{_id}}" class="button">{{>icons/delete}}</a>
+                            {{name}} <br><br>
+                           Latitude  {{latitude}}<br>
+                           Longitude  {{longitude}}<br><br><br>
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>                              
+        <div class="column is-one-fifth">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                        <br> <br>   {{codeToWeatherDescription}}<br><br> <br><br>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>                    
+        <div class="column is-one-fifth">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                            Temperature <br><br> {{lastReading.temp}}°C  <br>
+                            {{celciusToFahrenheit}}°F <br> <br>
+                            max/min <br> {{maxTemp}}°C <br>
+                            {{minTemp}}°C
+                    </div>
+                </div>
+            </div>
+        </div>                     
+        <div class="column is-one-fifth">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                         Wind Info <br><br> {{windToBeufort}}bFt<br>
+                         <br> Feels like {{feelsLikeWind}}°C <br><br><br>
+                         max/min <br>
+                         {{maxWind}}bFt <br>
+                         {{minWind}}bFt
+                    </div>
+                </div>
+            </div>
+        </div>                      
+        <div class="column is-one-fifth">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                           Pressure: <br><br> {{lastReading.pressure}}hPa <br> <br>
+                           max/min <br><br>
+                           {{maxPressure}}hPa <br>
+                           {{minPressure}}hPa
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="rows">
+            <div class="row is-half">
+                <br> <br>
+            </div>
+        </div>  
     </div>
+</section> <br>                           
+    
+<a href="/station/{{_id}}" class="button">{{>icons/open}}</a>
+<a href="/dashboard/deletestation/{{_id}}" class="button">{{>icons/delete}}</a>
+      
+
 {{/each}}

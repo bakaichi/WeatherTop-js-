@@ -10,8 +10,25 @@ export const dashboardController = {
       // getting the latest readings for each station
       const stationsWithLatestReadings = await Promise.all(
         stations.map(async (station) => {
+
           const lastReading = conversions.getLatestReading(station);
-          return { ...station, lastReading };
+          const codeToWeatherDescription = conversions.codeToWeather(lastReading.code);
+          
+          const celciusToFahrenheit = conversions.celciusToFahrenheit(lastReading.temp);
+          const maxTemp = conversions.getMaxValue(station, `temp`);
+          const minTemp = conversions.getMinValue(station, `temp`);
+
+          const windToBeufort = conversions.convertToBeufort(lastReading.windspeed);
+          const feelsLikeWind = conversions.windChill(lastReading.windspeed, lastReading.temp);
+          const maxWind = conversions.getMaxValue(station, `windspeed`);
+          const minWind = conversions.getMinValue(station, `windspeed`);
+
+          const maxPressure = conversions.getMaxValue(station, `pressure`);
+          const minPressure = conversions.getMinValue(station, `pressure`);
+
+
+          return { ...station, lastReading, codeToWeatherDescription, celciusToFahrenheit, maxTemp, minTemp,
+                  windToBeufort, feelsLikeWind, maxWind, minWind, maxPressure, minPressure};
         })
       );
   
@@ -28,6 +45,8 @@ export const dashboardController = {
             const newStation = {
             name: request.body.name,
             userid: loggedInUser._id,
+            latitude: request.body.latitude,
+            longitude: request.body.longitude,
         };
         console.log(`adding station ${newStation.name}`);
         await stationStore.addStation(newStation);

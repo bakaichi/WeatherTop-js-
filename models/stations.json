@@ -159,6 +159,14 @@
           "id": "bc8fb8eb-0503-4bfd-b8ba-32314e306bc3"
         }
       ]
+    },
+    {
+      "name": "Waterford",
+      "userid": "63b521ca-703e-4940-911a-3bd44f6cd057",
+      "latitude": "22.3",
+      "longitude": "33.2",
+      "_id": "372a8a48-8aa0-46d6-8364-d27ce5972d60",
+      "readings": []
     }
   ]
 }
