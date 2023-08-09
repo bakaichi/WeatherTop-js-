@@ -105,6 +105,60 @@
           "id": "cbeac089-4d21-4c04-aaa4-2e7b4cc9056c"
         }
       ]
+    },
+    {
+      "name": "Cork",
+      "userid": "63b521ca-703e-4940-911a-3bd44f6cd057",
+      "_id": "b440363e-5193-4d14-aac2-132d87752cd2",
+      "readings": [
+        {
+          "code": 300,
+          "temp": 15,
+          "windspeed": 3.5,
+          "pressure": 1002,
+          "windDirection": 240,
+          "id": "edf07562-defe-47f3-a352-f9b8730a6fde"
+        },
+        {
+          "code": 800,
+          "temp": 30,
+          "windspeed": 50,
+          "pressure": 500,
+          "windDirection": 77,
+          "id": "3d32ab78-d2e8-49be-b163-c8b7b519b4a3"
+        }
+      ]
+    },
+    {
+      "name": "Dublin",
+      "userid": "6258b0b5-69f1-4e1b-a08f-1bf56a80e9e1",
+      "_id": "5162fadd-0703-4b43-9b44-9f5dff9f2b16",
+      "readings": [
+        {
+          "code": 300,
+          "temp": 15,
+          "windspeed": 4.5,
+          "pressure": 900,
+          "windDirection": 303.75,
+          "id": "86422c96-96e0-4149-a387-d38f60b9ad7c"
+        },
+        {
+          "code": 1000,
+          "temp": 30,
+          "windspeed": 15,
+          "pressure": 500,
+          "windDirection": 77,
+          "id": "9e904205-a36b-4ff4-b55e-3e4ec6b1b57f"
+        },
+        {
+          "code": 100,
+          "temp": 30,
+          "windspeed": 15,
+          "pressure": 500,
+          "windDirection": 244,
+          "id": "bc8fb8eb-0503-4bfd-b8ba-32314e306bc3"
+        }
+      ]
     }
   ]
 }

@@ -13,6 +13,20 @@ export const conversions = {
         return lastReading;
     },
 
+    test (readings) {
+        let lastReading = null;
+
+        if (readings.length > 0) {
+            lastReading = readings[0];
+            for (let i = 0; i < readings.length; i++) {
+                lastReading = readings[i];
+            }
+        } else {
+            return 0;
+        }
+        return lastReading;
+    },
+
     getMaxValue(station, property) {
         if (station.readings.length < 2) {
           return 'not enough data';
