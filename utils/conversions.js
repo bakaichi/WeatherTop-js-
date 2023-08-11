@@ -13,18 +13,18 @@ export const conversions = {
         return lastReading;
     },
 
-    test (readings) {
-        let lastReading = null;
+    getSecondLatestReading(station) {
+        let reading = null;
 
-        if (readings.length > 0) {
-            lastReading = readings[0];
-            for (let i = 0; i < readings.length; i++) {
-                lastReading = readings[i];
+        if (station.readings.length > 0){
+            reading = station.readings[0];
+            for (let i = 0; i < station.readings.length; i++){
+                reading = station.readings[i - 1];
             }
         } else {
-            return 0;
+            return 'n/a';
         }
-        return lastReading;
+        return reading;
     },
 
     getMaxValue(station, property) {
@@ -169,5 +169,22 @@ export const conversions = {
         windChill = Math.round(windChill * 10) / 10.0; // rounds the answer to 1 decimal point
         return windChill;
     },  
+
+    getTrend(station, lastReading, secondLastReading) {
+        if (station.readings.size < 2){
+          return ' ';
+        } else {
+          const firstReading = lastReading;
+          const secondReading = secondLastReading;
+
+          if (firstReading > secondReading) {
+            return 'going up';
+          } else if (firstReading < secondReading){
+            return 'going down';
+          } else {
+            return 'aint moving';
+          }
+        }
+      },
       
 };

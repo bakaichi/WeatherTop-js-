@@ -97,12 +97,12 @@
           "id": "29e59e32-3cfc-4209-b5bd-bb6a56e0293b"
         },
         {
-          "code": 300,
-          "temp": 10.2,
-          "windspeed": 4.5,
-          "pressure": 1200,
-          "windDirection": 77,
-          "id": "cbeac089-4d21-4c04-aaa4-2e7b4cc9056c"
+          "code": 100,
+          "temp": 12,
+          "windspeed": 40,
+          "pressure": 2000,
+          "windDirection": 88,
+          "id": "caae26a1-bc0e-419f-bae2-c7b557f262e5"
         }
       ]
     },
@@ -126,6 +126,14 @@
           "pressure": 500,
           "windDirection": 77,
           "id": "3d32ab78-d2e8-49be-b163-c8b7b519b4a3"
+        },
+        {
+          "code": 100,
+          "temp": 10,
+          "windspeed": 1,
+          "pressure": 300,
+          "windDirection": 55,
+          "id": "c853f829-ade2-4eb2-8568-a75c8f790ad8"
         }
       ]
     },
@@ -159,14 +167,6 @@
           "id": "bc8fb8eb-0503-4bfd-b8ba-32314e306bc3"
         }
       ]
-    },
-    {
-      "name": "Waterford",
-      "userid": "63b521ca-703e-4940-911a-3bd44f6cd057",
-      "latitude": "22.3",
-      "longitude": "33.2",
-      "_id": "372a8a48-8aa0-46d6-8364-d27ce5972d60",
-      "readings": []
     }
   ]
 }

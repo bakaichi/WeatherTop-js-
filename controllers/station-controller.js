@@ -6,6 +6,7 @@ export const stationController = {
           
           const station = await stationStore.getStationById(request.params.id);
           const lastReading = conversions.getLatestReading(station);
+          const secondLastReading = conversions.getSecondLatestReading(station);
           const toFahrenheit = conversions.celciusToFahrenheit(lastReading.temp);
           const codeToWeather = conversions.codeToWeather(lastReading.code);
           const toBeufort = conversions.convertToBeufort(lastReading.windspeed);
@@ -21,6 +22,24 @@ export const stationController = {
           const minWind = conversions.getMinValue(station, 'windspeed');
           const minWindBft = conversions.convertToBeufort(minWind);
           const minPressure = conversions.getMinValue(station, 'pressure');
+
+          // Getting latest temp, second latest and comparing them to get a trend
+          const firstTemp = lastReading.temp;
+          const secondTemp = secondLastReading.temp;          
+          const tempTrend = conversions.getTrend(station, firstTemp, secondTemp);
+          console.log('t trend ', tempTrend);
+
+          // Pressure Trend
+          const firstPressure = lastReading.pressure;
+          const secondPressure = secondLastReading.pressure;
+          const pressureTrend = conversions.getTrend(station, firstPressure, secondPressure);
+          console.log('p trend ', pressureTrend );
+
+          // Wind Trend
+          let firstWindSpeed = lastReading.windspeed;
+          let secondWindSpeed = secondLastReading.windspeed;
+          const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);         
+          
 
 
           const viewData = {
@@ -42,6 +61,10 @@ export const stationController = {
             minWind: minWind,
             minWindBft: minWindBft,
             minPressure: minPressure,
+
+            tempTrend: tempTrend,
+            windTrend: windTrend,
+            pressureTrend: pressureTrend,
           };
           response.render("station-view", viewData);
         },

@@ -29,7 +29,8 @@
                             Temperature <br><br> {{lastReading.temp}}°C  <br>
                             {{celciusToFahrenheit}}°F <br> <br>
                             max/min <br> {{maxTemp}}°C <br>
-                            {{minTemp}}°C
+                            {{minTemp}}°C <br> <br>
+                            {{tempTrend}}
                     </div>
                 </div>
             </div>
@@ -42,7 +43,8 @@
                          <br> Feels like {{feelsLikeWind}}°C <br><br><br>
                          max/min <br>
                          {{maxWind}}bFt <br>
-                         {{minWind}}bFt
+                         {{minWind}}bFt <br><br>
+                         {{windTrend}}
                     </div>
                 </div>
             </div>
@@ -51,10 +53,12 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content has-text-centered">
-                           Pressure: <br><br> {{lastReading.pressure}}hPa <br> <br>
+                           Pressure: <br><br> {{lastReading.pressure}}hPa <br>
+                           second {{second.pressure}} <br>
                            max/min <br><br>
                            {{maxPressure}}hPa <br>
-                           {{minPressure}}hPa
+                           {{minPressure}}hPa <br>
+                           {{pressureTrend}}
                     </div>
                 </div>
             </div>
