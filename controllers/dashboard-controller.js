@@ -12,6 +12,7 @@ export const dashboardController = {
         stations.map(async (station) => {
 
           const lastReading = conversions.getLatestReading(station);
+          const secondLastReading = conversions.getSecondLatestReading(station);
           const codeToWeatherDescription = conversions.codeToWeather(lastReading.code);
           
           const celciusToFahrenheit = conversions.celciusToFahrenheit(lastReading.temp);
@@ -26,9 +27,25 @@ export const dashboardController = {
           const maxPressure = conversions.getMaxValue(station, `pressure`);
           const minPressure = conversions.getMinValue(station, `pressure`);
 
+          // Getting latest temp, second latest and comparing them to get a trend
+          let firstTemp = lastReading.temp;
+          let secondTemp = secondLastReading.temp;          
+          const tempTrend = conversions.getTrend(station, firstTemp, secondTemp);
+          console.log('t trend ', tempTrend);
+
+          // Pressure Trend
+          let firstPressure = lastReading.pressure;
+          let secondPressure = secondLastReading.pressure;
+          const pressureTrend = conversions.getTrend(station, firstPressure, secondPressure);
+          console.log('p trend ', pressureTrend );
+
+          // Wind Trend
+          let firstWindSpeed = lastReading.windspeed;
+          let secondWindSpeed = secondLastReading.windspeed;
+          const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);
 
           return { ...station, lastReading, codeToWeatherDescription, celciusToFahrenheit, maxTemp, minTemp,
-                  windToBeufort, feelsLikeWind, maxWind, minWind, maxPressure, minPressure};
+                  windToBeufort, feelsLikeWind, maxWind, minWind, maxPressure, minPressure, tempTrend, pressureTrend, windTrend};
         })
       );
   
