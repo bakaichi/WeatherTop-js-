@@ -6,6 +6,9 @@ export const dashboardController = {
     async index(request, response) {
       const loggedInUser = await accountsController.getLoggedInUser(request);
       const stations = await stationStore.getStationsByUserId(loggedInUser._id);
+
+      // sorting station names alphabetically on dashboard
+      stations.sort((a,b) => a.name !== b.name ? a.name < b.name ? -1 : 1 : 0); 
   
       // getting the latest readings for each station
       const stationsWithLatestReadings = await Promise.all(
