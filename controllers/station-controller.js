@@ -25,19 +25,19 @@ export const stationController = {
 
           // Getting latest temp, second latest and comparing them to get a trend
           const firstTemp = lastReading.temp;
-          const secondTemp = secondLastReading.temp;          
+          const secondTemp = secondLastReading ? secondLastReading.temp : 'n/a';          
           const tempTrend = conversions.getTrend(station, firstTemp, secondTemp);
           console.log('t trend ', tempTrend);
 
           // Pressure Trend
           const firstPressure = lastReading.pressure;
-          const secondPressure = secondLastReading.pressure;
+          const secondPressure =secondLastReading ? secondLastReading.pressure : 'n/a';
           const pressureTrend = conversions.getTrend(station, firstPressure, secondPressure);
           console.log('p trend ', pressureTrend );
 
           // Wind Trend
           let firstWindSpeed = lastReading.windspeed;
-          let secondWindSpeed = secondLastReading.windspeed;
+          let secondWindSpeed = secondLastReading ? secondLastReading.windspeed : 'n/a';
           const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);         
           
           
@@ -68,6 +68,7 @@ export const stationController = {
           response.render("station-view", viewData);
         },
 
+
         async addReading(request, response) {
           const station = await stationStore.getStationById(request.params.id);
           const newReading = {            
@@ -76,7 +77,7 @@ export const stationController = {
             windspeed: Number(request.body.windspeed),
             pressure: Number(request.body.pressure),
             windDirection: Number(request.body.windDirection),
-            date: JSON.stringify(new Date()),
+            date: new Date(JSON.parse(JSON.stringify(new Date()))).toISOString().replace('T', ' ').replace(/\.\d+Z$/, ''),
           };
           await stationStore.addReading(station._id, newReading);
           response.redirect("/station/" + station._id);
