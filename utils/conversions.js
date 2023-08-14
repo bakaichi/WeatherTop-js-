@@ -170,7 +170,7 @@ export const conversions = {
         return windChill;
     },  
 
-    getTrend(station, lastReading, secondLastReading) {
+     getTrend(station, lastReading, secondLastReading) {
         if (station.readings.size < 2){
           return ' ';
         } else {
@@ -178,13 +178,31 @@ export const conversions = {
           const secondReading = secondLastReading;
 
           if (firstReading > secondReading) {
-            return 'going up';
+            return 'fa-arrow-up fa-fade';
           } else if (firstReading < secondReading){
-            return 'going down';
+            return 'fa-arrow-down fa-fade';
           } else {
-            return 'aint moving';
+            return 'fa-minus fa-beat';
           }
         }
       },
+
+    convertToTempIcon(temp){
+        let s = null;
+        
+        if (temp >= 30){
+            s = 'fa-temperature-high';
+
+        } else if (temp >= 20){
+            s = 'fa-temperature-half';
+        } else if (temp >= 10){
+            s = 'fa-temperature-quarter';
+        } else {
+            s = 'fa-temperature-low';
+        }
+        return s;
+    },  
+
+
       
 };

@@ -5,9 +5,10 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content has-text-centered">
-                            {{name}} <br><br>
-                           Latitude  {{latitude}}<br>
-                           Longitude  {{longitude}}<br><br><br><br><br>
+                           <i class="fa-solid fa-xl fa-location-dot"></i><br>
+                           <h3>{{name}}</h3> <br><br>
+                           Latitude <br> {{latitude}} <br>
+                           Longitude <br>  {{longitude}}<br>
                     </div>
                 </div>
             </div>
@@ -16,7 +17,7 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content has-text-centered">
-                        <br> <br>   {{codeToWeatherDescription}}<br><br> <br><br>
+                        <br><br><br><h6>{{codeToWeatherDescription}}</h6><br> <br><br><br><br><br><br>
                             
                     </div>
                 </div>
@@ -26,11 +27,12 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content has-text-centered">
-                            Temperature <br><br> {{lastReading.temp}}°C  <br>
-                            {{celciusToFahrenheit}}°F <br> <br>
+                            <i class="fa-xl {{tempIcon}}"></i><br>
+                            <br><br><h6>Temperature</h6> <br> {{lastReading.temp}}°C  <br>
+                            {{celciusToFahrenheit}}°F <br> 
                             max/min <br> {{maxTemp}}°C <br>
                             {{minTemp}}°C <br> <br>
-                            {{tempTrend}}
+                            <i class="fa-solid fa-xl {{tempTrend}}"></i>   
                     </div>
                 </div>
             </div>
@@ -39,12 +41,13 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content has-text-centered">
-                         Wind Info <br><br> {{windToBeufort}}bFt<br>
-                         <br> Feels like {{feelsLikeWind}}°C <br><br><br>
+                         <i class="fa-solid fa-xl fa-wind"></i><br><br>
+                         <h6>Wind Info</h6>  <br><br> {{windToBeufort}}bFt<br>
+                         <br> Feels like {{feelsLikeWind}}°C <br><br>
                          max/min <br>
                          {{maxWind}}bFt <br>
                          {{minWind}}bFt <br><br>
-                         {{windTrend}}
+                         <i class="fa-solid fa-xl {{windTrend}}"></i>  
                     </div>
                 </div>
             </div>
@@ -53,19 +56,19 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content has-text-centered">
-                           Pressure: <br><br> {{lastReading.pressure}}hPa <br>
-                           second {{second.pressure}} <br>
+                           <i class="fa-solid fa-xl fa-arrow-down-short-wide"></i> <br><br>
+                           <h6>Pressure</h6> <br><br> {{lastReading.pressure}}hPa <br>
                            max/min <br><br>
                            {{maxPressure}}hPa <br>
-                           {{minPressure}}hPa <br>
-                           {{pressureTrend}}
+                           {{minPressure}}hPa <br><br><br>
+                           <i class="fa-solid fa-xl {{pressureTrend}}"></i>  <br>
                     </div>
                 </div>
             </div>
         </div>  
     </div>
 </section>                           
-<div style="padding-top: -2em; padding-bottom: 4em">
+<div style="margin-top: 2em; padding-bottom: 4em">
     <a href="/station/{{_id}}" class="button">{{>icons/open}}</a>
     <a href="/dashboard/deletestation/{{_id}}" class="button">{{>icons/delete}}</a>
 </div>

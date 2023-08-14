@@ -27,18 +27,20 @@ export const stationController = {
           const firstTemp = lastReading.temp;
           const secondTemp = secondLastReading ? secondLastReading.temp : 'n/a';          
           const tempTrend = conversions.getTrend(station, firstTemp, secondTemp);
-          console.log('t trend ', tempTrend);
-
+          
           // Pressure Trend
           const firstPressure = lastReading.pressure;
           const secondPressure =secondLastReading ? secondLastReading.pressure : 'n/a';
           const pressureTrend = conversions.getTrend(station, firstPressure, secondPressure);
-          console.log('p trend ', pressureTrend );
-
+          
           // Wind Trend
           let firstWindSpeed = lastReading.windspeed;
           let secondWindSpeed = secondLastReading ? secondLastReading.windspeed : 'n/a';
-          const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);         
+          const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);       
+          
+          // icons
+          const tempIcon = conversions.convertToTempIcon(firstTemp);
+          console.log(tempIcon + "hello");
           
           
           const viewData = {
@@ -64,6 +66,8 @@ export const stationController = {
             tempTrend: tempTrend,
             windTrend: windTrend,
             pressureTrend: pressureTrend,
+
+            tempIcon: tempIcon,
           };
           response.render("station-view", viewData);
         },
