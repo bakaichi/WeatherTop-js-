@@ -7,7 +7,7 @@
                     <div class="content has-text-centered">
                             {{name}} <br><br>
                            Latitude  {{latitude}}<br>
-                           Longitude  {{longitude}}<br><br><br>
+                           Longitude  {{longitude}}<br><br><br><br><br>
                     </div>
                 </div>
             </div>
@@ -62,17 +62,13 @@
                     </div>
                 </div>
             </div>
-        </div> 
-        <div class="rows">
-            <div class="row is-half">
-                <br> <br>
-            </div>
         </div>  
     </div>
-</section> <br>                           
-    
-<a href="/station/{{_id}}" class="button">{{>icons/open}}</a>
-<a href="/dashboard/deletestation/{{_id}}" class="button">{{>icons/delete}}</a>
+</section>                           
+<div style="padding-top: -2em; padding-bottom: 4em">
+    <a href="/station/{{_id}}" class="button">{{>icons/open}}</a>
+    <a href="/dashboard/deletestation/{{_id}}" class="button">{{>icons/delete}}</a>
+</div>
       
 
 {{/each}}

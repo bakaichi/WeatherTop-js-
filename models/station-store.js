@@ -98,6 +98,7 @@ export const stationStore = {
     reading.windspeed = updatedReading.windspeed;
     reading.pressure = updatedReading.pressure;
     reading.windDirection = updatedReading.windDirection;
+    reading.date = updatedReading.date;
 
     await db.write();
   },

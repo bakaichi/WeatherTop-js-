@@ -32,19 +32,19 @@ export const dashboardController = {
 
           // Getting latest temp, second latest and comparing them to get a trend
           let firstTemp = lastReading.temp;
-          let secondTemp = secondLastReading.temp;          
+          let secondTemp = secondLastReading ? secondLastReading.temp : "n/a";          
           const tempTrend = conversions.getTrend(station, firstTemp, secondTemp);
           console.log('t trend ', tempTrend);
 
           // Pressure Trend
           let firstPressure = lastReading.pressure;
-          let secondPressure = secondLastReading.pressure;
+          let secondPressure = secondLastReading ? secondLastReading.pressure : "n/a";
           const pressureTrend = conversions.getTrend(station, firstPressure, secondPressure);
           console.log('p trend ', pressureTrend );
 
           // Wind Trend
           let firstWindSpeed = lastReading.windspeed;
-          let secondWindSpeed = secondLastReading.windspeed;
+          let secondWindSpeed = secondLastReading ? secondLastReading.windspeed : "n/a";
           const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);
 
           return { ...station, lastReading, codeToWeatherDescription, celciusToFahrenheit, maxTemp, minTemp,

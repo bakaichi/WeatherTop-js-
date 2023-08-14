@@ -40,8 +40,7 @@ export const stationController = {
           let secondWindSpeed = secondLastReading.windspeed;
           const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);         
           
-
-
+          
           const viewData = {
             title: "Station",
             station: station,
@@ -71,12 +70,13 @@ export const stationController = {
 
         async addReading(request, response) {
           const station = await stationStore.getStationById(request.params.id);
-          const newReading = {
+          const newReading = {            
             code: Number(request.body.code),
             temp: Number(request.body.temp),
             windspeed: Number(request.body.windspeed),
             pressure: Number(request.body.pressure),
             windDirection: Number(request.body.windDirection),
+            date: JSON.stringify(new Date()),
           };
           await stationStore.addReading(station._id, newReading);
           response.redirect("/station/" + station._id);
