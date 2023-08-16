@@ -152,6 +152,24 @@
           "id": "bc8fb8eb-0503-4bfd-b8ba-32314e306bc3"
         }
       ]
+    },
+    {
+      "name": "Waterford",
+      "userid": "63b521ca-703e-4940-911a-3bd44f6cd057",
+      "latitude": "12.22",
+      "longitude": "-40",
+      "_id": "b06e5e4d-8da0-4460-abcc-f8fb17552dac",
+      "readings": [
+        {
+          "code": 300,
+          "temp": 30,
+          "windspeed": 4.5,
+          "pressure": 1001,
+          "windDirection": 244,
+          "date": "2023-08-16 15:06:51",
+          "id": "5316c584-d4a0-4c47-9a3b-cdfeec1e4ceb"
+        }
+      ]
     }
   ]
 }

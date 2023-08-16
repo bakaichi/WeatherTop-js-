@@ -189,20 +189,48 @@ export const conversions = {
 
     convertToTempIcon(temp){
         let s = null;
-        
+                
         if (temp >= 30){
-            s = 'fa-temperature-high';
+            s = 'fa-xl fa-temperature-high';
 
         } else if (temp >= 20){
-            s = 'fa-temperature-half';
+            s = 'fa-xl fa-temperature-half';
         } else if (temp >= 10){
-            s = 'fa-temperature-quarter';
+            s = 'fa-xl fa-temperature-quarter';
         } else {
-            s = 'fa-temperature-low';
+            s = 'fa-xl fa-temperature-low';
         }
         return s;
-    },  
+    },     
 
+    convertToWeatherIcon(code){
+        let s = null;
 
-      
+        switch(code) {
+            case 800:
+                s = "fa-solid fa-xl fa-cloud-bolt";
+                break;
+              case 700:
+                s = "fa-solid fa-xl fa-cloud-meatball";
+                break;
+              case 600:
+                s = "fa-solid fa-xl fa-cloud-rain";
+                break;
+              case 500:
+                s = "fa-solid fa-xl fa-cloud-showers-water";
+                break;
+              case 400:
+                s = "fa-solid fa-xl fa-cloud-showers-heavy";
+                break;
+              case 300:
+                s = "fa-solid fa-xl fa-cloud";
+                break;
+              case 200:
+                s = "fa-solid fa-xl fa-cloud-sun";
+                break;
+              case 100:
+                s = "fa-solid fa-xl fa-sun";
+        }
+        return s;
+    },
 };

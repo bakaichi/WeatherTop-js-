@@ -47,8 +47,19 @@ export const dashboardController = {
           let secondWindSpeed = secondLastReading ? secondLastReading.windspeed : "n/a";
           const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);
 
+          // Temp icons
+          const latestTemp = lastReading.temp;
+          console.log(latestTemp);
+          const tempIcon = conversions.convertToTempIcon(latestTemp);
+          //console.log(tempIcon);
+
+          // Weather Icons
+          const latestCode = lastReading.code;
+          const weatherIcon = conversions.convertToWeatherIcon(latestCode);
+
           return { ...station, lastReading, codeToWeatherDescription, celciusToFahrenheit, maxTemp, minTemp,
-                  windToBeufort, feelsLikeWind, maxWind, minWind, maxPressure, minPressure, tempTrend, pressureTrend, windTrend};
+                  windToBeufort, feelsLikeWind, maxWind, minWind, maxPressure, minPressure, tempTrend, pressureTrend,
+                  windTrend, tempIcon, weatherIcon};
         })
       );
   
