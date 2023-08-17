@@ -34,13 +34,12 @@ export const dashboardController = {
           let firstTemp = lastReading.temp;
           let secondTemp = secondLastReading ? secondLastReading.temp : "n/a";          
           const tempTrend = conversions.getTrend(station, firstTemp, secondTemp);
-          console.log('t trend ', tempTrend);
 
           // Pressure Trend
           let firstPressure = lastReading.pressure;
           let secondPressure = secondLastReading ? secondLastReading.pressure : "n/a";
           const pressureTrend = conversions.getTrend(station, firstPressure, secondPressure);
-          console.log('p trend ', pressureTrend );
+
 
           // Wind Trend
           let firstWindSpeed = lastReading.windspeed;
@@ -49,9 +48,7 @@ export const dashboardController = {
 
           // Temp icons
           const latestTemp = lastReading.temp;
-          console.log(latestTemp);
           const tempIcon = conversions.convertToTempIcon(latestTemp);
-          //console.log(tempIcon);
 
           // Weather Icons
           const latestCode = lastReading.code;

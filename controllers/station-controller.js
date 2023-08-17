@@ -23,26 +23,7 @@ export const stationController = {
           const minWindBft = conversions.convertToBeufort(minWind);
           const minPressure = conversions.getMinValue(station, 'pressure');
 
-          // Getting latest temp, second latest and comparing them to get a trend
-          const firstTemp = lastReading.temp;
-          const secondTemp = secondLastReading ? secondLastReading.temp : 'n/a';          
-          const tempTrend = conversions.getTrend(station, firstTemp, secondTemp);
-          
-          // Pressure Trend
-          const firstPressure = lastReading.pressure;
-          const secondPressure =secondLastReading ? secondLastReading.pressure : 'n/a';
-          const pressureTrend = conversions.getTrend(station, firstPressure, secondPressure);
-          
-          // Wind Trend
-          let firstWindSpeed = lastReading.windspeed;
-          let secondWindSpeed = secondLastReading ? secondLastReading.windspeed : 'n/a';
-          const windTrend = conversions.getTrend(station, firstWindSpeed, secondWindSpeed);       
-          
-          // icons
-          const tempIcon = conversions.convertToTempIcon(firstTemp);
-          console.log(tempIcon + "hello");
-          
-          
+
           const viewData = {
             title: "Station",
             station: station,
@@ -62,12 +43,6 @@ export const stationController = {
             minWind: minWind,
             minWindBft: minWindBft,
             minPressure: minPressure,
-
-            tempTrend: tempTrend,
-            windTrend: windTrend,
-            pressureTrend: pressureTrend,
-
-            tempIcon: tempIcon,
           };
           response.render("station-view", viewData);
         },
