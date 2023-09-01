@@ -56,26 +56,23 @@ export const accountsController = {
         if (loggedInUser) {
             const viewData = {
                 title: 'User Settings',
-                firstName: request.body.firstName,
-                lastName: request.body.lastName,
-                email: request.body.email,
-                password: request.body.password,
             };
             console.log(loggedInUser);
             response.render('usersettings', viewData);
         }
     },
 
-    update(request, response) {
-        const user = accountsController.getLoggedInUser(request);
+    async update(request, response) {
+        const userEmail = await request.cookies.station;
+        const user = await userStore.getUserByEmail(userEmail);
         const updatedUser = {
-            firstName: request.body.firstName,
-            lastName: request.body.lastName,
-            email: request.body.email,
-            password: request.body.password,
+            firstName: String(request.body.firstName),
+            lastName: String(request.body.lastName),
+            email: String(request.body.email),
+            password: String(request.body.password),
         };
         console.log("updated: ", updatedUser);
-        userStore.updateUser(user, updatedUser);
+        await userStore.updateUser(user, updatedUser);
         response.redirect("/dashboard");
     },
 };

@@ -2,8 +2,8 @@
   "file": "./models/users.json",
   "users": [
     {
-      "firstName": "Aidas",
-      "lastName": "Vaiciunas",
+      "firstName": "Bob",
+      "lastName": "Flavin",
       "email": "aidas@weathertop.com",
       "password": "hello",
       "_id": "63b521ca-703e-4940-911a-3bd44f6cd057"
