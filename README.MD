@@ -7,6 +7,11 @@ password: secret
 
 ## Features
 - This application has all the features listed for Release 3 and below
+    1. Adding and removing stations
+    2. Creating account and editing details
+    3. Trends / icons
+    4. Time and date stamps
+    5. Preloaded readings from .json file
 
 ## Logging in and using the application
 - Visit http://localhost:4000 upon using npm install, server can be run upon running the "server" file if using vs code.
