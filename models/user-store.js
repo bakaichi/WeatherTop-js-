@@ -44,6 +44,11 @@ export const userStore = {
         user.lastName = updatedUser.lastName;
         user.email = updatedUser.email;
         user.password = updatedUser.password;
+
+        console.log("updating user data...");
+
         await db.write();
+
+        console.log("user data updated")
     },
 };

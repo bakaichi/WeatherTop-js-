@@ -1,0 +1,24 @@
+{{>menu active="usersettings"}}
+
+<section style="margin-top: 10em;">
+  <h1 class="title"> Update your details </h2>
+  <form class="box" action="/accountscontroller/update" method="POST">
+  <label> Enter new Firstname and Lastname: </label> <br><br>
+  <div class="field">
+    <div class="field-body">
+      <div class="field is-horizontal">
+        <input class="input" type="text" placeholder="First Name" name="firstName">
+      </div>
+      <div class="field is-horizontal">
+        <input class="input" type="text" placeholder="Last Name" name="lastName">
+      </div>
+      <div class="field is-horizontal">
+        <input class="input" type="text" placeholder="Email" name="email">
+      </div>
+      <div class="field is-horizontal">
+        <input class="input" type="password" placeholder="password" name="password">
+      </div>
+  </div> <br><br>
+  <button class="button is-primary">Update Your Details</button>
+</form>
+</section>

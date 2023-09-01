@@ -88,6 +88,41 @@
           "id": "5fea6828-1617-40b7-bb57-f2c0d32627fe"
         }
       ]
+    },
+    {
+      "name": "Waterford",
+      "userid": "63b521ca-703e-4940-911a-3bd44f6cd057",
+      "latitude": "22.3",
+      "longitude": "-100.2",
+      "_id": "1e7259bc-c419-402e-9bcb-dd2f3c582028",
+      "readings": [
+        {
+          "code": 800,
+          "temp": 10.2,
+          "windspeed": 3.5,
+          "pressure": 1001,
+          "windDirection": 244,
+          "date": "2023-08-31 16:41:01",
+          "id": "7f4e6628-6362-41a6-8a3a-b924da9d429e"
+        },
+        {
+          "code": 300,
+          "temp": 8,
+          "windspeed": 10,
+          "pressure": 800,
+          "windDirection": 22,
+          "date": "2023-08-31 16:41:18",
+          "id": "973ab98c-7b3a-4bb1-a17c-04ffbc38bcd2"
+        }
+      ]
+    },
+    {
+      "name": "Dublin",
+      "userid": "6258b0b5-69f1-4e1b-a08f-1bf56a80e9e1",
+      "latitude": "22.3",
+      "longitude": "33.2",
+      "_id": "bda135c3-c138-4603-ba3d-8d3829c23010",
+      "readings": []
     }
   ]
 }

@@ -6,7 +6,6 @@ export const stationController = {
           
           const station = await stationStore.getStationById(request.params.id);
           const lastReading = conversions.getLatestReading(station);
-          const secondLastReading = conversions.getSecondLatestReading(station);
           const toFahrenheit = conversions.celciusToFahrenheit(lastReading.temp);
           const codeToWeather = conversions.codeToWeather(lastReading.code);
           const toBeufort = conversions.convertToBeufort(lastReading.windspeed);

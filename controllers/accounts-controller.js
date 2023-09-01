@@ -49,4 +49,33 @@ export const accountsController = {
         const userEmail = request.cookies.station;
         return await userStore.getUserByEmail(userEmail);
     },
+
+
+    settings(request, response){
+        const loggedInUser = accountsController.getLoggedInUser(request);
+        if (loggedInUser) {
+            const viewData = {
+                title: 'User Settings',
+                firstName: request.body.firstName,
+                lastName: request.body.lastName,
+                email: request.body.email,
+                password: request.body.password,
+            };
+            console.log(loggedInUser);
+            response.render('usersettings', viewData);
+        }
+    },
+
+    update(request, response) {
+        const user = accountsController.getLoggedInUser(request);
+        const updatedUser = {
+            firstName: request.body.firstName,
+            lastName: request.body.lastName,
+            email: request.body.email,
+            password: request.body.password,
+        };
+        console.log("updated: ", updatedUser);
+        userStore.updateUser(user, updatedUser);
+        response.redirect("/dashboard");
+    },
 };
