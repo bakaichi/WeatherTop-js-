@@ -32,9 +32,9 @@
                             <i class="{{tempIcon}} fa-solid "></i><br>
                             <br><br><h5>Temperature</h5> <br>
                              {{lastReading.temp}}°C  <br>
-                            {{celciusToFahrenheit}}°F <br> 
+                            {{celciusToFahrenheit}}°F <br><br> 
                             max/min <br> {{maxTemp}}°C <br>
-                            {{minTemp}}°C <br> <br><br><br><br> 
+                            {{minTemp}}°C <br> <br><br><br> 
                             <i class="fa-solid fa-xl {{tempTrend}}"></i> <br>
                     </div>
                 </div>
@@ -45,13 +45,13 @@
                 <div class="card-content">
                     <div class="content has-text-centered">
                          <i class="fa-solid fa-xl fa-wind"></i><br><br><br>
-                         <h5>Wind Info</h5>  <br><br>
+                         <h5>Wind Info</h5>  <br>
                           {{windToBeufort}}bFt<br>
                          <br> Feels like {{feelsLikeWind}}°C <br><br>
                          max/min <br>
                          {{maxWind}}bFt <br>
-                         {{minWind}}bFt <br><br>
-                         <i class="fa-solid fa-xl {{windTrend}}"></i>  
+                         {{minWind}}bFt <br><br><br>
+                         <i class="fa-solid fa-xl {{windTrend}}"></i><br> 
                     </div>
                 </div>
             </div>
@@ -62,8 +62,8 @@
                     <div class="content has-text-centered">
                            <i class="fa-solid fa-xl fa-arrow-down-short-wide"></i><br><br><br>
                            <h5>Pressure</h5> <br><br>
-                            {{lastReading.pressure}}hPa <br>
-                           max/min <br><br>
+                            {{lastReading.pressure}}hPa <br><br>
+                           max/min <br>
                            {{maxPressure}}hPa <br>
                            {{minPressure}}hPa <br><br><br><br>
                            <i class="fa-solid fa-xl {{pressureTrend}}"></i><br>
