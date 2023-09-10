@@ -22,3 +22,4 @@ password: secret
 - Add readings to the station
 - Readings and stations can be added and removed as the user wishes
 - User can edit their own details i.e. email, password or name
+- You can also visit the Glitch deployed version of the project at https://weathertop-js-.glitch.me/ 
